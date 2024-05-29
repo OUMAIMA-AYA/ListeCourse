@@ -72,6 +72,7 @@
         
         input[type="checkbox"] {
             transform: scale(1.5); 
+            margin-right: 10px;
         }
         
         .buttons {
@@ -123,12 +124,8 @@
     <script>
         document.querySelectorAll('input[type="checkbox"]').forEach(function(checkbox) {
             checkbox.addEventListener('change', function() {
-                var textInput = this.parentElement.querySelector('input[type="text"]');
-                if (this.checked) {
-                    textInput.classList.add('checked-text');
-                } else {
-                    textInput.classList.remove('checked-text');
-                }
+                var form = this.closest('form');
+                form.submit();
             });
         });
     </script>
